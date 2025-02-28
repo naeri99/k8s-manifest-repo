@@ -1,0 +1,11 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+images:
+- name: 038152454677.dkr.ecr.ap-northeast-2.amazonaws.com/demo-frontend
+  newName: 038152454677.dkr.ecr.ap-northeast-2.amazonaws.com/demo-frontend
+  newTag: 548a2a3c
+resources:
+- ../../base
+patchesStrategicMerge:
+- front-deployment-patch.yaml
+- front-service-patch.yaml
